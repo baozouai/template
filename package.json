@@ -24,7 +24,7 @@
   "main": "dist/babel-plugin-enum-to-object.js",
   "types": "dist/babel-plugin-enum-to-object.d.ts",
   "files": [
-    "dist/"
+    "dist"
   ],
   "engines": {
     "node": ">=16.14.0"
@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.20.2",
-    "@babel/plugin-syntax-typescript": "^7.21.4"
+    "@babel/plugin-syntax-typescript": "^7.21.4",
+    "v-lazy-show": "^0.2.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
