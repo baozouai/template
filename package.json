@@ -1,0 +1,85 @@
+{
+  "name": "@baozouai/bz_ci_test",
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.3.1",
+  "description": "transform enum to object for better tree shaking",
+  "author": "baozouai <baozouai@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/baozouai/bz_ci_test",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baozouai/bz_ci_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baozouai/bz_ci_test/issues"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "enum",
+    "typescript",
+    "node",
+    "reduce enum"
+  ],
+  "main": "dist/babel-plugin-enum-to-object.js",
+  "types": "dist/babel-plugin-enum-to-object.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint --cache --fix",
+    "build": "tsc",
+    "test": "vitest",
+    "release": "npm run clean && npm run build && npm publish",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.20.2",
+    "@babel/plugin-syntax-typescript": "^7.21.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.36.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/types": "^7.21.4",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@types/babel__core": "^7.20.0",
+    "@types/babel__helper-plugin-utils": "^7.10.0",
+    "@types/node": "^18.15.13",
+    "@vitest/coverage-c8": "^0.30.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.35.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "pnpm": "^8.3.1",
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^4.9.5",
+    "vitest": "^0.30.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
