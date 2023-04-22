@@ -1,6 +1,6 @@
 {
   "name": "@baozouai/bz_ci_test",
-  "version": "0.2.0",
+  "version": "0.2.1-beta.0",
   "packageManager": "pnpm@8.3.1",
   "description": "transform enum to object for better tree shaking",
   "author": "baozouai <baozouai@gmail.com>",
@@ -32,15 +32,14 @@
   "scripts": {
     "clean": "rm -rf dist",
     "lint": "eslint --cache --fix",
-    "build": "tsc",
+    "build": "unbuild",
     "test": "vitest",
-    "release": "npm run clean && npm run build && npm publish",
+    "release": "bumpp",
     "prepare": "husky install"
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.20.2",
-    "@babel/plugin-syntax-typescript": "^7.21.4",
-    "v-lazy-show": "^0.2.3"
+    "@babel/plugin-syntax-typescript": "^7.21.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
@@ -53,6 +52,7 @@
     "@types/babel__helper-plugin-utils": "^7.10.0",
     "@types/node": "^18.15.13",
     "@vitest/coverage-c8": "^0.30.1",
+    "bumpp": "^9.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.35.0",
     "husky": "^8.0.3",
@@ -60,6 +60,7 @@
     "pnpm": "^8.3.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.5",
+    "unbuild": "^1.2.1",
     "vitest": "^0.30.1"
   },
   "husky": {
