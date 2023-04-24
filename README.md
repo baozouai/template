@@ -1,6 +1,6 @@
 
 <p align="center">
-<h1 align="center">babel-plugin-enum-to-object</h1>
+<h1 align="center">template</h1>
 </p>
 
 <div align="center">
@@ -11,115 +11,59 @@
 ![Test][test-badge] ![codecov][codecov-badge]
 
 
-[npm-image]: https://img.shields.io/npm/v/babel-plugin-enum-to-object.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/babel-plugin-enum-to-object
+[npm-image]: https://img.shields.io/npm/v/template.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/template
 
 
-[download-image]: https://img.shields.io/npm/dm/babel-plugin-enum-to-object.svg?style=flat-square
+[download-image]: https://img.shields.io/npm/dm/template.svg?style=flat-square
 
 
 
-[test-badge]: https://github.com/baozouai/babel-plugin-enum-to-object/actions/workflows/ci.yml/badge.svg
+[test-badge]: https://github.com/baozouai/template/actions/workflows/ci.yml/badge.svg
 
-[codecov-badge]: https://codecov.io/github/baozouai/babel-plugin-enum-to-object/branch/master/graph/badge.svg
+[codecov-badge]: https://codecov.io/github/baozouai/template/branch/master/graph/badge.svg
 
 </div>
 
 English | [中文](./README-zh_CN.md)
 ## About
 
-A babel Plugin to transform ts enum to object，for better shaking
+this is a template
 
 
 ## Options
 
 ```ts
-  interface BabelPluginEnumToObjectOptions {
-  /**
-   * need reflect ? default true
-   * @example
-   * enum Status {
-   *  PAID
-   * }
-   * reflect: true
-   * =>
-   * const Status = {
-   * PAID: 0,
-   * 0: 'PAID',
-   * }
-   * reflect: false
-   * =>
-   * const Status = {
-   * PAID: 0,
-   * }
-   */
-  reflect?: boolean
-}
+  
 ```
 eg:
 
-before add plugin：
+
 ```ts
-enum Status {
-  PAID,
-  UN_PAID
-}
 
-// =>
-
-var Status;
-(function (Status) {
-  Status[Status.PAID = 0] = 'PAID'
-  Status[Status.UN_PAID = 1] = 'UN_PAID'
-})(Status || (Status = {}))
 ```
 
-after add plugin：
-```ts
-enum Status {
-  PAID,
-  UN_PAID
-}
 
-// =>
-// default (reflect is true)
-const Status = {
-  PAID: 0,
-  0: 'PAID',
-  UN_PAID: 1,
-  1: 'UN_PAID'
-}
-//  set reflect false
-const Status = {
-  PAID: 0,
-  UN_PAID: 1,
-}
+```ts
+
 ```
 
 
 ## 📦  Install
 
 ```sh
-pnpm add babel-plugin-enum-to-object -D
+pnpm add template -D
 # or
-yarn add babel-plugin-enum-to-object -D
+yarn add template -D
 # or
-npm i babel-plugin-enum-to-object -D
+npm i template -D
 ```
 
 ##  🔨 Usage
 
 ```js
-// babel.config.js
 
-module.exports = {
-
-  plugins: [
-    // if isProduction add this
-    ['enum-to-object', { reflect: true or false }]
-  ],
-}
 ```
 ## 📄 License
 
-babel-plugin-enum-to-object is [MIT licensed](./LICENSE).
+template is [MIT licensed](./LICENSE).
